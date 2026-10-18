@@ -33,5 +33,6 @@ jobs:
           test "$code" -eq 1
           node bin/folderdiff.js compare "$RUNNER_TEMP/samples/left" "$RUNNER_TEMP/samples/right" --json > "$RUNNER_TEMP/result.json" || test $? -eq 1
           node -e "const t=require(process.argv[1]).totals;if(t.onlyLeft!==1||t.onlyRight!==3||t.typeChanged!==1)process.exit(1)" "$RUNNER_TEMP/result.json"
-          cp -r "$RUNNER_TEMP/samples/left" "$RUNNER_TEMP/left-copy"
-          node bin/folderdiff.js compare "$RUNNER_TEMP/samples/left" "$RUNNER_TEMP/left-copy"
+          # A second sample set is identical to the first, so compare must exit 0.
+          node bin/folderdiff.js samples "$RUNNER_TEMP/samples-copy"
+          node bin/folderdiff.js compare "$RUNNER_TEMP/samples/left" "$RUNNER_TEMP/samples-copy/left"
