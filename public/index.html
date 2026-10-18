@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FolderDiff</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>◫ FolderDiff</h1>
+        <small>Local · Read-only · File hashes</small>
+      </div>
+      <small id="version"></small>
+    </header>
+
+    <main>
+      <form id="form">
+        <div class="field">
+          <label for="left-input">Left folder (absolute path)</label>
+          <input id="left-input" placeholder="/Users/you/project-v1" required>
+        </div>
+        <div class="field">
+          <label for="right-input">Right folder (absolute path)</label>
+          <input id="right-input" placeholder="/Users/you/project-v2" required>
+        </div>
+        <button type="submit" id="compare-button">Compare folders</button>
+      </form>
+
+      <div class="options">
+        <input type="checkbox" id="hidden">
+        <label for="hidden">Include hidden files</label>
+        <span class="hint" id="excluded"></span>
+        <button type="button" class="secondary" id="sample-button" hidden>Load sample folders</button>
+      </div>
+      <div id="error" role="alert"></div>
+
+      <!-- One counter per status, built from data/statuses.json by app.js. -->
+      <section class="stats" id="stats"></section>
+
+      <section class="panel">
+        <div class="list-pane">
+          <div class="toolbar">
+            <input id="search" placeholder="Filter filenames…" aria-label="Filter filenames">
+            <select id="filter" aria-label="Filter status">
+              <option value="all">All</option>
+            </select>
+          </div>
+          <div class="items" id="items">
+            <div class="empty">Select two folders to compare.</div>
+          </div>
+        </div>
+
+        <div class="preview-pane">
+          <div class="diff-title" id="detail-title">File preview</div>
+          <p class="hint" id="detail-message">Click a file to compare its text content.</p>
+          <div class="columns">
+            <div>
+              <p class="hint">Left</p>
+              <pre id="text-left">-</pre>
+            </div>
+            <div>
+              <p class="hint">Right</p>
+              <pre id="text-right">-</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

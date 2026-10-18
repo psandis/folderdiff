@@ -1,0 +1,16 @@
+{
+  "statuses": [
+    { "key": "identical", "label": "Identical", "short": "identical" },
+    { "key": "modified", "label": "Modified", "short": "modified" },
+    { "key": "onlyLeft", "label": "Only left", "short": "only left" },
+    { "key": "onlyRight", "label": "Only right", "short": "only right" },
+    { "key": "typeChanged", "label": "Type changed", "short": "type changed" }
+  ],
+  "previewReasons": {
+    "missing": "missing on this side",
+    "binary": "binary file, no preview",
+    "tooLarge": "over {limit}, no preview",
+    "symlink": "symlink to {target}",
+    "notFile": "not a regular file"
+  }
+}

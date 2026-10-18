@@ -1,0 +1,5 @@
+{
+  "name": "sample-app",
+  "port": 4000,
+  "debug": false
+}

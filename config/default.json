@@ -1,0 +1,19 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 4328,
+    "maxRequestBytes": 100000,
+    "maxComparisons": 20
+  },
+  "compare": {
+    "exclude": [".git", "node_modules", ".DS_Store"],
+    "includeHidden": false,
+    "hashAlgorithm": "sha256"
+  },
+  "preview": {
+    "maxBytes": 200000
+  },
+  "samples": {
+    "dir": "~/.folderdiff/samples"
+  }
+}

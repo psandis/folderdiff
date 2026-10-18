@@ -1,0 +1,54 @@
+{
+  "markerFile": ".folderdiff-samples",
+  "generatedDir": "generated",
+  "cases": [
+    {
+      "path": "data.bin",
+      "kind": "bytes",
+      "left": [0, 1, 2, 3, 4],
+      "right": [0, 1, 2, 3, 5],
+      "purpose": "Binary file: contains zero bytes, so the preview says binary"
+    },
+    {
+      "path": "big.log",
+      "kind": "largeText",
+      "line": "2026-01-01T00:00:00Z line {n} sample log entry",
+      "left": { "extraLines": 0 },
+      "right": { "extraLines": 1 },
+      "purpose": "Larger than preview.maxBytes, and different on each side"
+    },
+    {
+      "path": "node_modules/example-pkg/index.js",
+      "kind": "text",
+      "left": "module.exports = {};\n",
+      "right": "module.exports = {};\n",
+      "purpose": "Inside node_modules, which compare.exclude skips"
+    },
+    {
+      "path": "output",
+      "kind": "text",
+      "left": "build output\n",
+      "purpose": "A file on the left that is a folder on the right (type changed)"
+    },
+    {
+      "path": "output/index.html",
+      "kind": "text",
+      "right": "<p>build output</p>\n",
+      "purpose": "Inside the folder that replaced a file"
+    },
+    {
+      "path": "same-link",
+      "kind": "symlink",
+      "left": "../README.txt",
+      "right": "../README.txt",
+      "purpose": "Symlink with the same target on both sides"
+    },
+    {
+      "path": "latest",
+      "kind": "symlink",
+      "left": "../README.txt",
+      "right": "../notes.md",
+      "purpose": "Symlink with different targets"
+    }
+  ]
+}

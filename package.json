@@ -1,0 +1,48 @@
+{
+  "name": "folderdiff",
+  "version": "0.1.0",
+  "description": "Local, read-only folder comparison with a browser GUI and a terminal compare command",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "homepage": "https://github.com/psandis/folderdiff",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psandis/folderdiff.git"
+  },
+  "bugs": {
+    "url": "https://github.com/psandis/folderdiff/issues"
+  },
+  "bin": {
+    "folderdiff": "bin/folderdiff.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "public",
+    "config",
+    "data",
+    "samples",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "start": "node bin/folderdiff.js",
+    "dev": "node --watch-path=src --watch-path=public --watch-path=config --watch-path=data bin/folderdiff.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "folder",
+    "directory",
+    "diff",
+    "compare",
+    "gui",
+    "cli",
+    "devtools"
+  ],
+  "author": "psandis <petri.sandholm@gmail.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@12.11.2"
+}
